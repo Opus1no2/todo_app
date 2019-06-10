@@ -6,36 +6,15 @@
     <div class="input-group">
       <input class='input' placeholder="password" type="password" v-model="password">
     </div>
-    <button class="btn" type="submit">Log In</button>
+    <button class="btn" type="submit">Sign Up</button>
   </form>
 </template>
 
 <script>
-import * as fromAuth from '@/api/auth';
-
 export default {
-  name: 'Login',
-  data() {
-    return {
-      email: '',
-      password: '',
-    };
-  },
-  methods: {
-    login() {
-      fromAuth.signIn(this.email, this.password)
-        .then((response) => {
-          if ('access-token' in response.headers) {
-            this.$router.push('dashboard');
-          }
-        }).catch((err) => {
-          console.log('err', err);
-        });
-    },
-  },
+  name: 'SignUp',
 };
 </script>
-
 <style lang="scss">
 .btn {
   color: white;
@@ -44,7 +23,6 @@ export default {
   border: none;
   border-radius: 0;
 }
-
 .input-group .input{
   width: 100%;
   border-radius: 0;

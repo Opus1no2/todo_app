@@ -1,10 +1,8 @@
 <template>
-  <div>
+  <div class='login-cont'>
     <Header></Header>
-    <div class="cont">
-      <div class="pane">
-        <Login></Login>
-      </div>
+    <div class='container'>
+      <Login></Login>
     </div>
   </div>
 </template>
@@ -41,20 +39,12 @@ export default {
 </script>
 
 <style lang="scss">
-  .btn {
-    color: white;
-    width: 100%;
-    background: #026bb5;
-    border: none;
-  }
-
-  .cont {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .pane {
-    width: 80%;
-  }
+.login-cont {
+  height: 100vh;
+  width: 100%;
+  background: url('~@/assets/images/wood.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: fixed;
+}
 </style>
