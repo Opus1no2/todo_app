@@ -5,6 +5,8 @@
 </template>
 
 <style lang="scss">
+@import '../src/assets/styles/skeleton.css';
+
 body {
   margin: 0;
   background: #151515;

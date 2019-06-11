@@ -36,12 +36,12 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .btn {
   color: white;
   width: 100%;
-  background: #026bb5;
-  border: none;
+  background: #286794;
+  border: solid #9c9c9c 1px;
   border-radius: 0;
 }
 

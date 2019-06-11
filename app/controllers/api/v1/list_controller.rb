@@ -14,10 +14,6 @@ module Api
       def show
         render json: List.where(user_id: current_v1_user.id, id: params[:id])
       end
-
-      def update; end
-
-      def destroy; end
     end
   end
 end

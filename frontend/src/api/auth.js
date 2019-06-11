@@ -11,3 +11,7 @@ export function signIn(email, password) {
 export function logOut() {
   return axios.delete('/v1/auth/sign_out');
 };
+
+export function signUp(email, password) {
+  return axios.post('/v1/user', { user: { email, password }});
+};

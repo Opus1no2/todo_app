@@ -8,7 +8,7 @@ RSpec.describe 'authentication', type: :request do
 
   def login
     params = { email: user.email, password: user.password }
-    post '/api/v1/auth/sign_in', params: params
+    post '/v1/auth/sign_in', params: params
   end
 
   describe 'login' do
@@ -30,12 +30,12 @@ RSpec.describe 'authentication', type: :request do
       end
 
       it 'returns an http unauthorized' do
-        post '/api/v1/auth/sign_in', params: params
+        post '/v1/auth/sign_in', params: params
         expect(response).to have_http_status(401)
       end
 
       it 'returns success as false' do
-        post '/api/v1/auth/sign_in', params: params
+        post '/v1/auth/sign_in', params: params
         expect(JSON(response.body).dig('success')).to eq(false)
       end
     end
@@ -45,7 +45,7 @@ RSpec.describe 'authentication', type: :request do
     it 'validates tokens' do
       login
 
-      get '/api/v1/auth/validate_token', params: {
+      get '/v1/auth/validate_token', params: {
         uid: response.headers['uid'],
         client: response.headers['client'],
         'access-token' => response.headers['access-token']
