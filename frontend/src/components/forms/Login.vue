@@ -23,13 +23,15 @@ export default {
   },
   methods: {
     login() {
+      if (!this.email || !this.password) return;
+
       fromAuth.signIn(this.email, this.password)
         .then((response) => {
           if ('access-token' in response.headers) {
             this.$router.push('dashboard');
           }
         }).catch((err) => {
-          console.log('err', err);
+          this.$root.$emit('login-failure', err);
         });
     },
   },

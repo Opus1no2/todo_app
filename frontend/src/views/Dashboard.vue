@@ -1,21 +1,15 @@
 <template>
   <div class='dashboard-cont'>
-    <DashHeader></DashHeader>
-    <Progress></Progress>
-    <List></List>
+    <Dashboard></Dashboard>
   </div>
 </template>
 
 <script>
-import List from '@/components/List.vue';
-import DashHeader from '@/components/DashHeader.vue';
-import Progress from '@/components/Progress.vue';
+import Dashboard from '@/components/Dashboard.vue';
 
 export default {
   components: {
-    List,
-    DashHeader,
-    Progress,
+    Dashboard,
   },
 };
 </script>

@@ -43,5 +43,5 @@ axios.interceptors.response.use((response) => {
   return response;
 }, (err) => {
   router.push('/');
-  Promise.reject(err);
+  return Promise.reject(err);
 });

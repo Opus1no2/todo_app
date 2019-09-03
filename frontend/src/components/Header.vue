@@ -1,7 +1,7 @@
 <template>
-  <header class="header">
+  <header class='header'>
     <div class='container'>
-      <h4><router-link to='/'>Yet Another Todo Application</router-link></h4>
+      <h4><router-link to='/'>AlbumPura</router-link></h4>
       <router-link to='/sign_up' class='btn'>Sign Up</router-link>
     </div>
   </header>
@@ -36,7 +36,7 @@ h4 {
 .header {
   color: white;
   background: #2f2f2f;
-  border-bottom: solid 1px #2f2f2f;
+  border-bottom: solid #676767 1px;
   padding: 20px;
   margin-bottom: 35px;
 

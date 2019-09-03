@@ -2,6 +2,9 @@
   <div class='login-cont'>
     <Header></Header>
     <div class='container'>
+      <div v-if='error' class='auth-error'>
+        Your username or password was incorrect.
+      </div>
       <Login></Login>
     </div>
   </div>
@@ -17,28 +20,33 @@ export default {
     return {
       email: '',
       password: '',
+      error: false,
     };
   },
   components: {
     Header,
     Login,
   },
-  methods: {
-    login() {
-      fromAuth.signIn(this.email, this.password)
-        .then((response) => {
-          if (response.headers.has('access-token')) {
-            this.$router.push('dashboard');
-          }
-        }).catch((err) => {
-          console.log('err', err);
-        });
-    },
+  mounted() {
+    this.$root.$on('login-failure', () => {
+      this.error = true;
+    });
   },
 };
 </script>
 
 <style lang="scss">
+.auth-error {
+  background: #ff7777;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 18px;
+  height: 40px;
+}
+
 .login-cont {
   height: 100vh;
   width: 100%;

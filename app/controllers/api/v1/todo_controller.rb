@@ -30,6 +30,11 @@ module Api
         end
       end
 
+      def destroy
+        removed = Todo.find(permitted_params[:id]).destroy
+        render json: removed
+      end
+
       def permitted_params
         params.permit(:name, :id, :list_id)
       end

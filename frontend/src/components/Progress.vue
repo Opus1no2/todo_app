@@ -1,5 +1,5 @@
 <template>
-  <progress class='list-progress' v-bind:value='progress' max='100'></progress>
+  <progress class='list-progress' v-bind:value='percentage' max='100'></progress>
 </template>
 
 <script>
@@ -7,12 +7,12 @@ export default {
   name: 'Progress',
   data() {
     return {
-      progress: 0,
+      percentage: 0,
     };
   },
   mounted() {
-    this.$root.$on('list-progress', (p) => {
-      this.progress = p;
+    this.$root.$on('list-progress', (percentage) => {
+      this.percentage = percentage;
     });
   },
 };
@@ -22,6 +22,11 @@ export default {
 progress[value]::-webkit-progress-bar {
   background: white;
 }
+
+progress[value]::-webkit-progress-value {
+  background: #45af5e;
+}
+
 progress[value] {
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -32,4 +37,5 @@ progress[value] {
   border: none;
   width: 100%;
 }
+
 </style>
